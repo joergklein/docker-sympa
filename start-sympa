@@ -1,0 +1,11 @@
+#! /bin/bash -e
+   
+export PERL5LIB="/home/sympa/bin:/home/sympa/lib/perl5"
+/home/sympa/write-sympa-conf
+
+# running health check
+/home/sympa/bin/sympa.pl --health_check
+
+# running daemon in the foreground
+/home/sympa/bin/sympa_msg.pl --foreground
+
